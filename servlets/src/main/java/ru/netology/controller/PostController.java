@@ -28,7 +28,7 @@ public class PostController {
     response.setContentType(APPLICATION_JSON);
     final var post = service.getById(id);
       response.getWriter().print(gson.toJson(post));
-    //TODO: deserialize request & serialize response
+
   }
 
   public void save(Reader body, HttpServletResponse response) throws IOException {
@@ -42,6 +42,6 @@ public class PostController {
   public void removeById(long id, HttpServletResponse response) {
     service.removeById(id);
       response.setStatus(HttpServletResponse.SC_OK);
-    // TODO: deserialize request & serialize response
+
   }
 }
